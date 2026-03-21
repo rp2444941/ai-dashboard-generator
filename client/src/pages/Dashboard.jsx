@@ -24,11 +24,19 @@ const Dashboard = () => {
     fetchHistory();
   }, []);
 
+  useEffect(() => {
+  if (response) {
+    window.scrollTo({ top: 300, behavior: "smooth" });
+  }
+}, [response]);
+
   const handleGenerate = async (prompt) => {
     try {
       setLoading(true);
       setError("");
+
       const res = await api.post("/generate", { prompt });
+
       setResponse(res.data.response);
       fetchHistory();
     } catch (err) {
@@ -54,11 +62,15 @@ const Dashboard = () => {
   return (
     <div>
       <Navbar />
-      <div style={styles.container}>
-        <h1>Dashboard</h1>
-        {error && <p style={styles.error}>{error}</p>}
+
+      <div className="container">
+       <h1 className="page-title">Dashboard</h1>
+        {error && <p className="error-text">{error}</p>}
+
         <PromptForm onGenerate={handleGenerate} loading={loading} />
+
         <ResponseCard response={response} />
+
         <HistoryList
           history={history}
           onDelete={handleDelete}
@@ -67,17 +79,6 @@ const Dashboard = () => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    maxWidth: "900px",
-    margin: "20px auto",
-    padding: "20px",
-  },
-  error: {
-    color: "red",
-  },
 };
 
 export default Dashboard;

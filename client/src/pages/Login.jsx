@@ -12,16 +12,18 @@ const Login = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
 
     try {
       const res = await api.post("/auth/login", formData);
+
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data));
+
       navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
@@ -29,51 +31,44 @@ const Login = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2>Login</h2>
-      {error && <p style={styles.error}>{error}</p>}
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        New user? <Link to="/signup">Signup</Link>
-      </p>
+    <div className="auth-container">
+
+      <div className="auth-card">
+        <h2 className="auth-title">Login</h2>
+
+        {error && <p className="error-text">{error}</p>}
+
+        <form onSubmit={handleSubmit} className="auth-form">
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+
+          <button type="submit">Login</button>
+
+        </form>
+
+        <p className="auth-footer">
+          New user? <Link to="/signup">Signup</Link>
+        </p>
+      </div>
+
     </div>
   );
-};
-
-const styles = {
-  container: {
-    maxWidth: "400px",
-    margin: "60px auto",
-    padding: "20px",
-    background: "#fff",
-    borderRadius: "10px",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px",
-  },
-  error: {
-    color: "red",
-  },
 };
 
 export default Login;

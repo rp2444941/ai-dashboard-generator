@@ -1,34 +1,36 @@
+import { useState } from "react";
+
 const ResponseCard = ({ response }) => {
+  const [copied, setCopied] = useState(false);
+
   const handleCopy = async () => {
     if (!response) return;
+
     await navigator.clipboard.writeText(response);
-    alert("Copied to clipboard");
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
-    <div style={styles.card}>
-      <div style={styles.header}>
+    <div className="card">
+      
+      <div className="response-header">
         <h3>Generated Content</h3>
-        {response && <button onClick={handleCopy}>Copy</button>}
+
+        {response && (
+          <button className="copy-btn" onClick={handleCopy}>
+            {copied ? "✔ Copied" : "Copy"}
+          </button>
+        )}
       </div>
-      <p>{response || "Your generated content will appear here."}</p>
+
+      <p className="output">
+        {response || "Your generated content will appear here."}
+      </p>
+
     </div>
   );
-};
-
-const styles = {
-  card: {
-    marginTop: "20px",
-    padding: "16px",
-    background: "#fff",
-    borderRadius: "10px",
-    border: "1px solid #e5e7eb",
-  },
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
 };
 
 export default ResponseCard;
