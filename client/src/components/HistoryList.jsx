@@ -7,7 +7,7 @@ const HistoryList = ({ history, onDelete, onSelect }) => {
       ) : (
         history.map((item) => (
           <div key={item._id} style={styles.item}>
-            <div style={styles.text} onClick={() => onSelect(item)}>
+            <div style={styles.text} onClick={() => onSelect(item)} title="Click to view response">
               <strong>{item.prompt}</strong>
             </div>
             <button onClick={() => onDelete(item._id)}>Delete</button>
@@ -35,8 +35,9 @@ const styles = {
     borderBottom: "1px solid #eee",
   },
   text: {
-    cursor: "pointer",
-    flex: 1,
+   cursor: "pointer",
+  flex: 1,
+  color: "#111827",
   },
 };
 
