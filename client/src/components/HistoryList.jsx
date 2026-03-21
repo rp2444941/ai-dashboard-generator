@@ -1,44 +1,34 @@
 const HistoryList = ({ history, onDelete, onSelect }) => {
   return (
-    <div style={styles.card}>
-      <h3>History</h3>
+    <div className="card">
+      <h3 style={{ marginBottom: "10px" }}>History</h3>
+
       {history.length === 0 ? (
-        <p>No history yet.</p>
+        <p className="small-text">No history yet.</p>
       ) : (
         history.map((item) => (
-          <div key={item._id} style={styles.item}>
-            <div style={styles.text} onClick={() => onSelect(item)} title="Click to view response">
-              <strong>{item.prompt}</strong>
+          <div key={item._id} className="history-item">
+            
+            <div
+              className="history-text"
+              onClick={() => onSelect(item)}
+              title="Click to view response"
+            >
+              {item.prompt}
             </div>
-            <button onClick={() => onDelete(item._id)}>Delete</button>
+
+            <button
+              className="delete-btn"
+              onClick={() => onDelete(item._id)}
+            >
+              delete
+            </button>
+
           </div>
         ))
       )}
     </div>
   );
-};
-
-const styles = {
-  card: {
-    marginTop: "20px",
-    padding: "16px",
-    background: "#fff",
-    borderRadius: "10px",
-    border: "1px solid #e5e7eb",
-  },
-  item: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: "12px",
-    padding: "10px 0",
-    borderBottom: "1px solid #eee",
-  },
-  text: {
-   cursor: "pointer",
-  flex: 1,
-  color: "#111827",
-  },
 };
 
 export default HistoryList;

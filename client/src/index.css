@@ -87,3 +87,76 @@ button:disabled {
   font-size: 14px;
   color: #6b7280;
 }
+/*HistoryList*/
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.history-text {
+  flex: 1;
+  cursor: pointer;
+  color: #111827;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.history-text:hover {
+  color: #4f46e5;
+  background: #f9fafb;
+
+}
+
+.delete-btn {
+  background: transparent;
+  color: #ef4444;
+  font-size: 16px;
+  padding: 6px 10px;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
+
+/*Navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #111827;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;/* Chrome/Safari */
+    background-clip: text;         /* Standard */
+  color: transparent;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.username {
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.logout-btn {
+  background: #ef4444;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}

@@ -11,30 +11,17 @@ const Navbar = () => {
   };
 
   return (
-    <div style={styles.nav}>
-      <h2>AI Content Generator</h2>
-      <div style={styles.right}>
-        <span>{user?.name}</span>
-        <button onClick={handleLogout}>Logout</button>
+    <div className="navbar">
+      <h2 className="logo">AI Generator</h2>
+
+      <div className="nav-right">
+        <span className="username">👤 {user?.name}</span>
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );
-};
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "16px 24px",
-    background: "#111827",
-    color: "#fff",
-  },
-  right: {
-    display: "flex",
-    alignItems: "center",
-    gap: "12px",
-  },
 };
 
 export default Navbar;
