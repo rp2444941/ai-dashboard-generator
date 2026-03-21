@@ -28,3 +28,7 @@ https://ai-dashboard-orcin-three.vercel.app
 git clone https://github.com/rp2444941/ai-dashboard-generator
 cd client && npm install
 cd ../server && npm install
+
+## 👨‍💻 Author
+Rudra Pratap  
+GitHub: https://github.com/rp2444941
