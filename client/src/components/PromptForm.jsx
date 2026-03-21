@@ -19,7 +19,11 @@ const PromptForm = ({ onGenerate, loading }) => {
         onChange={(e) => setPrompt(e.target.value)}
         style={styles.textarea}
       />
-      <button type="submit" disabled={loading} style={styles.button}>
+      <button type="submit" disabled={loading} style={{
+    ...styles.button,
+    opacity: loading || !prompt.trim() ? 0.7 : 1,
+    cursor: loading || !prompt.trim() ? "not-allowed" : "pointer",
+  }}>
         {loading ? "Generating..." : "Generate"}
       </button>
     </form>
