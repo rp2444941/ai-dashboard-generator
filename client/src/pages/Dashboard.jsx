@@ -32,7 +32,7 @@ const Dashboard = () => {
       setResponse(res.data.response);
       fetchHistory();
     } catch (err) {
-      setError(err.response?.data?.message || "Generation failed");
+      setError(err.response?.data?.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
