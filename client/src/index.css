@@ -1,35 +1,89 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f3f4f6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
 }
 
+/* Reset */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-input,
-textarea,
-button {
-  font-family: inherit;
-  font-size: 16px;
-  padding: 10px;
-}
-
+/* Inputs & Textarea */
 input,
 textarea {
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
 }
 
+input:focus,
+textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Button */
 button {
+  padding: 12px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
+  font-weight: 500;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-a {
-  color: #2563eb;
-  text-decoration: none;
+button:hover {
+  background: #4338ca;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Card style (important 🔥) */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Output box */
+.output {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* Small text */
+.small-text {
+  font-size: 14px;
+  color: #6b7280;
 }
