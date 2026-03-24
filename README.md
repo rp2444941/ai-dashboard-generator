@@ -1,25 +1,36 @@
-# AI Content Generator Dashboard
+# 🚀 AI Content Generator
 
-Full-stack SaaS-style dashboard where users can sign up, log in, generate AI content from prompts, and manage prompt history.
+A full-stack MERN application that generates AI-based content using user prompts.
 
-## Features
-- JWT Authentication (Signup/Login/Logout)
-- Protected Dashboard Route
-- Prompt-based content generation API
-- MongoDB stored prompt + response history
-- View previous responses from history
-- Delete history item
-- Copy generated response
+## 🔥 Features
+- User Authentication (JWT)
+- Prompt-based AI generation
+- History tracking
+- Copy to clipboard
+- Protected routes
 
-## Tech Stack
-- Frontend: React, React Router, Axios
-- Backend: Node.js, Express.js
-- Database: MongoDB (Mongoose)
-- Auth: JWT, bcryptjs
+## 🛠️ Tech Stack
+- Frontend: React (Vite)
+- Backend: Node.js, Express
+- Database: MongoDB
+- Deployment: Vercel (Frontend), Render (Backend)
 
-## Setup (Local)
-### Backend
+## 🌐 Live Demo
+- 🚀 Frontend: [Open App](https://ai-dashboard-orcin-three.vercel.app)  
+- ⚙️ Backend API: [View API](https://ai-dashboard-jbov.onrender.com)
+
+## 📂 Folder Structure
+- client → frontend
+- server → backend
+
+## 👨‍💻 Author
+Rudra Pratap  
+GitHub: https://github.com/rp2444941
+
+## ⚡ Installation
+
 ```bash
-cd server
-npm install
-npm run dev
+git clone https://github.com/rp2444941/ai-dashboard-generator
+cd client && npm install
+cd ../server && npm install
+        
