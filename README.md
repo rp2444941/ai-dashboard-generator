@@ -16,7 +16,8 @@ A full-stack MERN application that generates AI-based content using user prompts
 - Deployment: Vercel (Frontend), Render (Backend)
 
 ## 🌐 Live Demo
-https://ai-dashboard-orcin-three.vercel.app
+- 🚀 Frontend: [Open App](https://ai-dashboard-orcin-three.vercel.app)  
+- ⚙️ Backend API: [View API](https://ai-dashboard-jbov.onrender.com)
 
 ## 📂 Folder Structure
 - client → frontend
